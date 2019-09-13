@@ -1,0 +1,31 @@
+= simple_form_for @import do |f|
+  - if import.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(import.errors.count, "error")
+        prohibited this import from being saved:
+      %ul
+        - import.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.input :assigned_number
+  .field
+    = f.input :pedimento_number
+  .field
+    = f.input :import_type_id
+  .field
+    = f.input :total
+  .field
+    = f.input :iva
+  .field
+    = f.input :notes
+  .field
+    = f.input :import_date
+  %h3 Parts
+  #parts
+    = f.simple_fields_for :imports_parts do |part|
+      = render 'imports_part_fields', f: part
+    .links
+      = link_to_add_association 'add part', f, :imports_parts
+  .actions
+    = f.submit

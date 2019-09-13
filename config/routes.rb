@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "imports#index"
   resources :exports
   resources :export_types
   resources :imports
