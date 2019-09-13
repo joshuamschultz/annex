@@ -69,6 +69,6 @@ class ImportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def import_params
-      params.require(:import).permit(:assigned_number, :pedimento_number, :import_type_id, :total, :iva, :notes, :import_date)
+      params.require(:import).permit(:assigned_number, :pedimento_number, :import_type_id, :total, :iva, :notes, :import_date, imports_parts_attributes: %i[id quantity part_id cost _destroy])
     end
 end

@@ -1,6 +1,6 @@
 class AddItemsToExportPart < ActiveRecord::Migration[6.0]
   def change
-    add_column :export_parts, :quantity, :integer
-    add_column :export_parts, :import_part, :reference
+    add_column :exports_parts, :quantity, :integer
+    add_column :exports_parts, :imports_part_id, :integer 
   end
 end
