@@ -38,8 +38,12 @@ ActiveRecord::Schema.define(version: 2019_09_12_163535) do
     t.index ["export_type_id"], name: "index_exports_on_export_type_id"
   end
 
-# Could not dump table "exports_parts" because of following StandardError
-#   Unknown type 'reference' for column 'import_part'
+  create_table "exports_parts", id: false, force: :cascade do |t|
+    t.integer "export_id", null: false
+    t.integer "part_id", null: false
+    t.integer "quantity"
+    t.integer "imports_part_id"
+  end
 
   create_table "import_types", force: :cascade do |t|
     t.string "type_code"

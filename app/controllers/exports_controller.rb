@@ -69,6 +69,6 @@ class ExportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def export_params
-      params.require(:export).permit(:assigned_number, :pedimento_number, :import_type_id, :total, :iva, :notes, :import_date)
+      params.require(:export).permit(:assigned_number, :pedimento_number, :export_type_id, :total, :iva, :notes, :export_date, exports_parts_attributes: %i[id quantity part_id imports_part_id _destroy])
     end
 end

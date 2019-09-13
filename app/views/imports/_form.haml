@@ -12,7 +12,7 @@
   .field
     = f.input :pedimento_number
   .field
-    = f.input :import_type_id
+    = f.association :import_type, label_method: :type_code
   .field
     = f.input :total
   .field

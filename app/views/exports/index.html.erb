@@ -7,7 +7,7 @@
     <tr>
       <th>Assigned number</th>
       <th>Pedimento number</th>
-      <th>Import type</th>
+      <th>Export type</th>
       <th>Total</th>
       <th>Iva</th>
       <th>Notes</th>
@@ -21,11 +21,11 @@
       <tr>
         <td><%= export.assigned_number %></td>
         <td><%= export.pedimento_number %></td>
-        <td><%= export.import_type_id %></td>
+        <td><%= export.export_type_id %></td>
         <td><%= export.total %></td>
         <td><%= export.iva %></td>
         <td><%= export.notes %></td>
-        <td><%= export.import_date %></td>
+        <td><%= export.export_date %></td>
         <td><%= link_to 'Show', export %></td>
         <td><%= link_to 'Edit', edit_export_path(export) %></td>
         <td><%= link_to 'Destroy', export, method: :delete, data: { confirm: 'Are you sure?' } %></td>
