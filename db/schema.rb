@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_163535) do
+ActiveRecord::Schema.define(version: 2019_09_24_143708) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_163535) do
     t.date "import_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "exchange_rate"
     t.index ["import_type_id"], name: "index_imports_on_import_type_id"
   end
 
