@@ -2,7 +2,7 @@
 
 <h1>Imports</h1>
 
-<table>
+<table id="table">
   <thead>
     <tr>
       <th>Assigned number</th>
@@ -37,3 +37,11 @@
 <br>
 
 <%= link_to 'New Import', new_import_path %>
+
+
+
+<script>
+  $(document).ready( function () {
+    $('#table').DataTable();
+  } );
+</script>

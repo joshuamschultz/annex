@@ -1,4 +1,4 @@
-= simple_form_for @import do |f|
+= simple_form_for @import, html: { class: 'form-inline' } do |f|
   - if import.errors.any?
     #error_explanation
       %h2
@@ -7,25 +7,36 @@
       %ul
         - import.errors.full_messages.each do |message|
           %li= message
-  .field
-    = f.input :assigned_number
-  .field
-    = f.input :pedimento_number
-  .field
-    = f.association :import_type, label_method: :type_code
-  .field
-    = f.input :total
-  .field
-    = f.input :iva
-  .field
-    = f.input :notes
-  .field
-    = f.input :import_date
-  %h3 Parts
-  #parts
-    = f.simple_fields_for :imports_parts do |part|
-      = render 'imports_part_fields', f: part
-    .links
-      = link_to_add_association 'add part', f, :imports_parts
-  .actions
-    = f.submit
+  .container 
+    .row 
+      .col 
+        = f.input :assigned_number, placeholder: 'Assigned Number', label: false
+      .col
+        = f.input :pedimento_number, placeholder: 'Pedimento Number', label: false
+      .col
+        = f.date_field :import_date
+      .col 
+        = f.association :import_type, label_method: :type_code, label: "Import Type"
+    %br
+    .row
+      .col
+        = f.input :total, placeholder: 'Total Value', label: false
+      .col
+        = f.input :iva, placeholder: 'IVA', label: false
+      .col 
+        = f.input :exchange_rate, placeholder: 'Exchange Rate', label: false
+    %br
+    .row
+      .col 
+        = f.input :notes, placeholder: "notes", label: false
+    %br
+      .row 
+        %h3 Parts
+      .row
+        #parts
+          = f.simple_fields_for :imports_parts do |part|
+            = render 'imports_part_fields', f: part
+          .links
+            = link_to_add_association 'add part', f, :imports_parts
+      .actions
+        = f.submit
