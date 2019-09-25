@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type code:</strong>
+  <%= @export_type.type_code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @export_type.name %>
+</p>
+
+<%= link_to 'Edit', edit_export_type_path(@export_type) %> |
+<%= link_to 'Back', export_types_path %>

@@ -1,0 +1,11 @@
+.nested-fields.form-group
+  .wrapper 
+    .row
+      .col
+        = f.association :part, label_method: :part_number
+      .col 
+        = f.input :quantity
+      .col 
+        = f.input :cost 
+    .row 
+      = link_to_remove_association "remove part", f

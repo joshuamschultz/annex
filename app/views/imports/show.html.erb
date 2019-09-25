@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Assigned number:</strong>
+  <%= @import.assigned_number %>
+</p>
+
+<p>
+  <strong>Pedimento number:</strong>
+  <%= @import.pedimento_number %>
+</p>
+
+<p>
+  <strong>Import type:</strong>
+  <%= @import.import_type_id %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @import.total %>
+</p>
+
+<p>
+  <strong>Iva:</strong>
+  <%= @import.iva %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @import.notes %>
+</p>
+
+<p>
+  <strong>Import date:</strong>
+  <%= @import.import_date %>
+</p>
+
+<%= link_to 'Edit', edit_import_path(@import) %> |
+<%= link_to 'Back', imports_path %>

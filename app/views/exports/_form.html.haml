@@ -1,0 +1,41 @@
+= simple_form_for @export, html: { class: 'form-inline' } do |f|
+  - if export.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(export.errors.count, "error")
+        prohibited this export from being saved:
+      %ul
+        - export.errors.full_messages.each do |message|
+          %li= message
+  .container 
+    .row 
+      .col 
+        = f.input :assigned_number, placeholder: 'Assigned Number', label: false
+      .col
+        = f.input :pedimento_number, placeholder: 'Pedimento Number', label: false
+      .col
+        = f.date_field :export_date
+      .col 
+        = f.association :export_type, label_method: :type_code, label: "Export Type"
+    %br
+    .row
+      .col
+        = f.input :total, placeholder: 'Total Value', label: false
+      .col
+        = f.input :iva, placeholder: 'IVA', label: false
+    %br
+    .row
+      .col 
+        = f.input :notes, placeholder: "notes", label: false
+    %br
+    .row 
+      %h3 Parts
+    .row
+      #parts
+        = f.simple_fields_for :exports_parts do |part|
+          = render 'exports_part_fields', f: part
+        .links
+          = link_to_add_association 'add part', f, :exports_parts
+    .actions 
+      .row 
+        = f.submit

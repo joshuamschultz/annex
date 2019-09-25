@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  assigned_number: MyString
+  pedimento_number: MyString
+  import_type: one
+  total: 9.99
+  iva: 9.99
+  notes: MyText
+  import_date: 2019-09-12
+
+two:
+  assigned_number: MyString
+  pedimento_number: MyString
+  import_type: two
+  total: 9.99
+  iva: 9.99
+  notes: MyText
+  import_date: 2019-09-12

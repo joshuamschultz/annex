@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type code:</strong>
+  <%= @import_type.type_code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @import_type.name %>
+</p>
+
+<%= link_to 'Edit', edit_import_type_path(@import_type) %> |
+<%= link_to 'Back', import_types_path %>

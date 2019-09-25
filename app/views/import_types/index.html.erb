@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Import Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type code</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @import_types.each do |import_type| %>
+      <tr>
+        <td><%= import_type.type_code %></td>
+        <td><%= import_type.name %></td>
+        <td><%= link_to 'Show', import_type %></td>
+        <td><%= link_to 'Edit', edit_import_type_path(import_type) %></td>
+        <td><%= link_to 'Destroy', import_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Import Type', new_import_type_path %>

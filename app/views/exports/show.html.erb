@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Assigned number:</strong>
+  <%= @export.assigned_number %>
+</p>
+
+<p>
+  <strong>Pedimento number:</strong>
+  <%= @export.pedimento_number %>
+</p>
+
+<p>
+  <strong>Export type:</strong>
+  <%= @export.export_type_id %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @export.total %>
+</p>
+
+<p>
+  <strong>Iva:</strong>
+  <%= @export.iva %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @export.notes %>
+</p>
+
+<p>
+  <strong>Import date:</strong>
+  <%= @export.export_date %>
+</p>
+
+<%= link_to 'Edit', edit_export_path(@export) %> |
+<%= link_to 'Back', exports_path %>
