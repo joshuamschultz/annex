@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  host: localhost
   database: annex
   username: deploy
   password: <%= ENV['ANNEX_DATABASE_PASSWORD'] %>
