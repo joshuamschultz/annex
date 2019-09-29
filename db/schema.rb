@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_143708) do
+ActiveRecord::Schema.define(version: 2019_09_29_221338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_143708) do
     t.index ["export_type_id"], name: "index_exports_on_export_type_id"
   end
 
-  create_table "exports_parts", id: false, force: :cascade do |t|
+  create_table "exports_parts", force: :cascade do |t|
     t.integer "export_id", null: false
     t.integer "part_id", null: false
     t.integer "quantity"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_143708) do
     t.index ["import_type_id"], name: "index_imports_on_import_type_id"
   end
 
-  create_table "imports_parts", id: false, force: :cascade do |t|
+  create_table "imports_parts", force: :cascade do |t|
     t.integer "import_id", null: false
     t.integer "part_id", null: false
     t.decimal "cost"
