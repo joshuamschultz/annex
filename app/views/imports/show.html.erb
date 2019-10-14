@@ -34,6 +34,23 @@
   <strong>Import date:</strong>
   <%= @import.import_date %>
 </p>
+<hr>
+<table>
+  <tr>
+    <th>Part</th>
+    <th>Quantity</th>
+    <th>Cost</th>
+    <th>COO</th>
+  </tr>
+  <%- @import.imports_parts.each do |part| %>
+    <tr>
+      <td><%= part.part.part_number %></td>
+      <td><%= part.quantity %></td>
+      <td><%= part.cost %></td>
+      <td><%= part.country_of_origin %></td>
+    </tr>
+   <% end %> 
+</table>
 
 <%= link_to 'Edit', edit_import_path(@import) %> |
 <%= link_to 'Back', imports_path %>
