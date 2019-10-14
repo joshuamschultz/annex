@@ -35,5 +35,22 @@
   <%= @export.export_date %>
 </p>
 
+<hr>
+
+<table>
+  <tr>
+    <th>Part</th>
+    <th>Quantity</th>
+    <th>Import ID</th>
+  </tr>
+  <%- @export.exports_parts.each do |part| %>
+    <tr>
+      <td><%= part.part.part_number %></td>
+      <td><%= part.quantity %></td>
+      <td><%= part.imports_parts.assigned_number %></td>
+    </tr>
+   <% end %> 
+</table>
+
 <%= link_to 'Edit', edit_export_path(@export) %> |
 <%= link_to 'Back', exports_path %>

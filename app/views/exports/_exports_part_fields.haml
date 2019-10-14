@@ -6,7 +6,7 @@
       .col 
         = f.input :quantity
       .col 
-        = f.association :imports_part, :label_method => lambda { |import_part| "#{import_part.import.assigned_number}" }, label: 'Import Number'
+        = f.association :imports_part, :label_method => lambda { |import_part| "#{import_part.part.part_number}" "-" "#{import_part.import.assigned_number}" }, label: 'Import Number'
     .row 
       = link_to_remove_association "remove part", f
 
