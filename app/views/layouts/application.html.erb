@@ -21,20 +21,23 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Imports</a>
+        <a class="nav-link" href=<%= imports_path%> >Imports</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Exports</a>
+        <a class="nav-link" href=<%= exports_path%> >Exports</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Reports
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Inventory</a>
-          <a class="dropdown-item" href="#">Usage</a>
-          <a class="dropdown-item" href="#">Annex 24</a>
+          <a class="dropdown-item" href=<%= reports_inventory_path%>>Inventory</a>
+          <a class="dropdown-item" href=<%= reports_usage_path %>>Usage</a>
+          <a class="dropdown-item" href=<%= reports_annex24_path%>>Annex 24</a>
         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=<%= parts_path%> >Parts</a>
       </li>
     </ul>
   </div>
