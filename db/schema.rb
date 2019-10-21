@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_221338) do
+ActiveRecord::Schema.define(version: 2019_10_21_142912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_09_29_221338) do
     t.integer "part_id", null: false
     t.integer "quantity"
     t.integer "imports_part_id"
+    t.date "export_date"
   end
 
   create_table "import_types", force: :cascade do |t|
