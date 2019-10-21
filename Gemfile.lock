@@ -98,6 +98,8 @@ GEM
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (4.1.2)
+      activesupport (>= 4.2)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -258,6 +260,7 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.1, >= 2.1.4)
   capybara (>= 2.15)
   cocoon (~> 1.2, >= 1.2.8)
+  groupdate
   haml-rails (~> 1.0)
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)

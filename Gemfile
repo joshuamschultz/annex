@@ -52,6 +52,7 @@ end
 
 # DSL changes
 gem 'responders'
+gem 'groupdate'
 
 gem 'cocoon', '~> 1.2', '>= 1.2.8'
 gem 'haml-rails', '~> 1.0'

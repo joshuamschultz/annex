@@ -42,12 +42,14 @@
     <th>Part</th>
     <th>Quantity</th>
     <th>Import ID</th>
+    <th>date</th>
   </tr>
   <%- @export.exports_parts.each do |part| %>
     <tr>
       <td><%= part.part.part_number %></td>
       <td><%= part.quantity %></td>
-      <td><%= part.imports_parts.assigned_number %></td>
+      <td><%= part.imports_part.assigned_number %></td>
+      <td><%= part.export_date %></td>
     </tr>
    <% end %> 
 </table>
