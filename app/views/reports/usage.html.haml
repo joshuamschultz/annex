@@ -1,37 +1,19 @@
-
-
-%table
-  %thead 
-    %tr 
-      %th Part Number
-      %th This Month
-      %th Last Month 
-      %th= @keys[2]
-      %th= @keys[3]
-      %th= @keys[4]
-      %th= @keys[5]
-      %th= @keys[6]
-      %th= @keys[7]
-      %th= @keys[8]
-      %th= @keys[9]
-      %th= @keys[10]
-      %th= @keys[11]
-      %th= @keys[12]
-  %tbody    
-    - @parts.each do |part| 
-      - usage = UsageService.new(part).usage
+.widget-body
+  %table{id: "usage_block", class: "dynamicTable table table-striped table-bordered table-condensed",data: { source: reports_usage_path(format: :json) }}
+    %thead
       %tr
-        %td= part.part_number
-        %td= usage[@keys[0]]
-        %td= usage[@keys[1]]
-        %td= usage[@keys[2]]
-        %td= usage[@keys[3]]
-        %td= usage[@keys[4]]
-        %td= usage[@keys[5]]
-        %td= usage[@keys[6]]
-        %td= usage[@keys[7]]
-        %td= usage[@keys[8]]
-        %td= usage[@keys[9]]
-        %td= usage[@keys[10]]
-        %td= usage[@keys[11]]
-        %td= usage[@keys[12]]
+        %th Part Number
+        %th This Month
+        %th Last Month
+        -(1..10).each do |i|
+          %th A
+
+
+    %tbody
+      - @parts.each do |part|
+        - usage = UsageService.new(part).usage
+        %tr
+          %td= part.part_number
+          -(1..12).each do |i|
+            %td= usage[@keys[0]]
+
