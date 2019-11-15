@@ -5,15 +5,39 @@
         %th Part Number
         %th This Month
         %th Last Month
-        -(1..10).each do |i|
-          %th A
+        %th 2 month ago
+        %th 3 month ago
+        %th 4 month ago
+        %th 5 month ago
+        %th 6 month ago
+        %th 7 month ago
+        %th 8 month ago
+        %th 9 month ago
+        %th 10 month ago
+        %th 11 month ago
+        / -(1..10).each do |i|
+        /   %th A
 
 
     %tbody
-      - @parts.each do |part|
-        - usage = UsageService.new(part).usage
-        %tr
-          %td= part.part_number
-          -(1..12).each do |i|
-            %td= usage[@keys[0]]
 
+
+:javascript
+  $('#usage_block').DataTable({
+    ajax: $('#usage_block').data()['source'], 
+    columns: [
+        {data: 'Part Number'},
+        {data: 'This Month'},
+        {data: 'Last Month'},
+        {data: '2 month ago'},
+        {data: '3 month ago'},
+        {data: '4 month ago'},
+        {data: '5 month ago'},
+        {data: '6 month ago'},
+        {data: '7 month ago'},
+        {data: '8 month ago'},
+        {data: '9 month ago'},
+        {data: '10 month ago'},
+        {data: '11 month ago'}
+    ]
+  });

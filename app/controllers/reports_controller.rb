@@ -17,7 +17,7 @@ class ReportsController < ApplicationController
 			    end
 			    response << part_hash
 			end
-    		render json: {aaData: response}
+    		render json: {data: response}
     	}
     end
 

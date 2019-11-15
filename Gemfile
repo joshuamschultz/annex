@@ -23,8 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 #database for active record
-gem 'mysql2'
-gem 'ajax-datatables-rails'
+# gem 'mysql2'
+# gem 'ajax-datatables-rails'
+# gem 'jquery-datatables'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Use Active Storage variant
