@@ -9,15 +9,14 @@ class ReportsController < ApplicationController
 		    @parts.each do |part|
 			    part_hash = {}
 			    usage = UsageService.new(part).usage
-			    part_hash['Part Number'] = part.part_number
-			    part_hash['This Month'] = usage[@keys[0]]
-			    part_hash['Last Month'] = usage[@keys[1]]
-			    (2..12).each do |i|
-			    	part_hash[@keys[i]] = usage[@keys[i]]
-			    end
+				part_hash['Part Number'] = part.part_number
+				(0..11).each do |i|
+					part_hash[i] = usage[@keys[i]]
+				end
 			    response << part_hash
 			end
-    		render json: {data: response}
+			render json: {data: response}
+			
     	}
     end
 

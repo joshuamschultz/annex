@@ -3,41 +3,37 @@
     %thead
       %tr
         %th Part Number
-        %th This Month
-        %th Last Month
-        %th 2 month ago
-        %th 3 month ago
-        %th 4 month ago
-        %th 5 month ago
-        %th 6 month ago
-        %th 7 month ago
-        %th 8 month ago
-        %th 9 month ago
-        %th 10 month ago
-        %th 11 month ago
-        / -(1..10).each do |i|
-        /   %th A
-
-
+        %th= @keys[0]
+        %th= @keys[1]
+        %th= @keys[2]
+        %th= @keys[3]
+        %th= @keys[4]
+        %th= @keys[5]
+        %th= @keys[6]
+        %th= @keys[7]
+        %th= @keys[8]
+        %th= @keys[9]
+        %th= @keys[10]
+        %th= @keys[11]
     %tbody
-
+- console
 
 :javascript
   $('#usage_block').DataTable({
     ajax: $('#usage_block').data()['source'], 
     columns: [
         {data: 'Part Number'},
-        {data: 'This Month'},
-        {data: 'Last Month'},
-        {data: '2 month ago'},
-        {data: '3 month ago'},
-        {data: '4 month ago'},
-        {data: '5 month ago'},
-        {data: '6 month ago'},
-        {data: '7 month ago'},
-        {data: '8 month ago'},
-        {data: '9 month ago'},
-        {data: '10 month ago'},
-        {data: '11 month ago'}
+        {data: 0},
+        {data: 1},
+        {data: 2},
+        {data: 3},
+        {data: 4},
+        {data: 5},
+        {data: 6},
+        {data: 7},
+        {data: 8},
+        {data: 9},
+        {data: 10},
+        {data: 11}
     ]
   });
