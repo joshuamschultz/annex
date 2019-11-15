@@ -1,6 +1,6 @@
 
 
-%table
+%table.display#usage
   %thead 
     %tr 
       %th Part Number
@@ -35,3 +35,9 @@
         %td= usage[@keys[10]]
         %td= usage[@keys[11]]
         %td= usage[@keys[12]]
+
+    
+:javascript
+  $(document).ready(function() {
+    $('#usage').DataTable();
+  } );
