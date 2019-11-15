@@ -9,8 +9,17 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
+require('datatables.net-bs4')
 
+import $ from 'jquery';
+global.$ = jQuery;
+// import $ from 'jquery'
 
+// require('imports-loader?define=>false!datatables.net')(window, $)
+// require('datatables.net-dt')(window, $)
+// import dt from 'datatables.net';
+//import 'datatables.net-dt/css/jquery.datatables.css';
+// require('datatables.net-dt')()
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -25,7 +34,6 @@ import "../stylesheets/application";
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
-})
-
-
+});
+// require('datatables.net-dt')(window, $)
 import "cocoon-js"

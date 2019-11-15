@@ -1,43 +1,43 @@
-
-
-%table.display#usage
-  %thead 
-    %tr 
-      %th Part Number
-      %th This Month
-      %th Last Month 
-      %th= @keys[2]
-      %th= @keys[3]
-      %th= @keys[4]
-      %th= @keys[5]
-      %th= @keys[6]
-      %th= @keys[7]
-      %th= @keys[8]
-      %th= @keys[9]
-      %th= @keys[10]
-      %th= @keys[11]
-      %th= @keys[12]
-  %tbody    
-    - @parts.each do |part| 
-      - usage = UsageService.new(part).usage
+.widget-body
+  %table{id: "usage_block", class: "dynamicTable table table-striped table-bordered table-condensed",data: { source: reports_usage_path(format: :json) }}
+    %thead
       %tr
-        %td= part.part_number
-        %td= usage[@keys[0]]
-        %td= usage[@keys[1]]
-        %td= usage[@keys[2]]
-        %td= usage[@keys[3]]
-        %td= usage[@keys[4]]
-        %td= usage[@keys[5]]
-        %td= usage[@keys[6]]
-        %td= usage[@keys[7]]
-        %td= usage[@keys[8]]
-        %td= usage[@keys[9]]
-        %td= usage[@keys[10]]
-        %td= usage[@keys[11]]
-        %td= usage[@keys[12]]
+        %th Part Number
+        %th This Month
+        %th Last Month
+        %th 2 month ago
+        %th 3 month ago
+        %th 4 month ago
+        %th 5 month ago
+        %th 6 month ago
+        %th 7 month ago
+        %th 8 month ago
+        %th 9 month ago
+        %th 10 month ago
+        %th 11 month ago
+        / -(1..10).each do |i|
+        /   %th A
 
-    
+
+    %tbody
+
+
 :javascript
-  $(document).ready(function() {
-    $('#usage').DataTable();
-  } );
+  $('#usage_block').DataTable({
+    ajax: $('#usage_block').data()['source'], 
+    columns: [
+        {data: 'Part Number'},
+        {data: 'This Month'},
+        {data: 'Last Month'},
+        {data: '2 month ago'},
+        {data: '3 month ago'},
+        {data: '4 month ago'},
+        {data: '5 month ago'},
+        {data: '6 month ago'},
+        {data: '7 month ago'},
+        {data: '8 month ago'},
+        {data: '9 month ago'},
+        {data: '10 month ago'},
+        {data: '11 month ago'}
+    ]
+  });
